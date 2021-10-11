@@ -10,6 +10,18 @@ window.onload = function(){
     let currentPlayer = "X";
     let gameState = ["", "", "", "", "", "", "", "", ""];
 
+
+    const winCon = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+    ];
+
     /*
     const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
 
@@ -75,6 +87,12 @@ window.onload = function(){
             event.target.classList.remove("hover");
         });
 
+    });
+
+    button.addEventListener("click", clicked =>{
+        //document.querySelectorAll('.space').forEach(space => space.innerHTML = "");
+        board.querySelectorAll('div').forEach(space=> space.innerHTML = "");
+        currentPlayer= "X";
     });
 
     
