@@ -42,6 +42,7 @@ window.onload = function(){
 
 
     boardList.forEach( space => {
+        //space.onmouseover(hover);
         space.setAttribute("class", "square");
         space.setAttribute("id", id);
         id++;
@@ -62,6 +63,16 @@ window.onload = function(){
                 space.classList.add(currentPlayer);
                 currentPlayer= "X";
             }
+        });
+
+        space.addEventListener("mouseover", function(event){
+            if(!space.classList.contains("X") && !space.classList.contains("O")){
+                event.target.classList.add("hover");
+            }
+        });
+
+        space.addEventListener("mouseout", function(event){
+            event.target.classList.remove("hover");
         });
 
     });
